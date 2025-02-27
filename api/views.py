@@ -12,6 +12,7 @@ from rest_framework import mixins, generics
 from rest_framework import viewsets
 from blogs.models import Blog,Comment
 from blogs.serializers import BlogSerializer,CommentSerializer
+from .paginations import CustomPagination
 
 
 
@@ -175,6 +176,7 @@ class EmployeeViewSet(viewsets.ViewSet):
 class EmployeeViewSet(viewsets.ModelViewSet):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
+    pagination_class = CustomPagination
 
 
 
