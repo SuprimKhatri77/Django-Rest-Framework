@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'blogs',
     'django_filters',
     'drf_spectacular',
+    'quotes',
 ]
 
 MIDDLEWARE = [
@@ -139,7 +140,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # }
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'api.paginations.CustomPagination',
-    'PAGE_SIZE':2,
+    'PAGE_SIZE':1,
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
 }

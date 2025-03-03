@@ -21,4 +21,9 @@ urlpatterns = [
     path('blogs/<int:pk>/', views.BlogDetailView.as_view()),
     path('comments/<int:pk>/', views.CommentDetailView.as_view()),
 
+
+    path('quotes/', views.QuotesView.as_view()),
+    path('quotes/<int:pk>/', views.QuoteDetailView.as_view()),
+
+
 ]

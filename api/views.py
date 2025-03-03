@@ -15,6 +15,8 @@ from blogs.serializers import BlogSerializer,CommentSerializer
 from .paginations import CustomPagination
 from employees.filters import EmployeeFilter
 from rest_framework.filters import SearchFilter
+from quotes.serializers import QuoteSerializer
+from quotes.models import *
 
 
 
@@ -205,4 +207,20 @@ class BlogDetailView(generics.RetrieveUpdateDestroyAPIView):
 class CommentDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
+    lookup_field = 'pk'
+
+
+
+
+# quotes
+class QuotesView(generics.ListCreateAPIView):
+    queryset = Quote.objects.all()
+    serializer_class = QuoteSerializer
+    pagination_class = CustomPagination
+
+
+
+class QuoteDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Quote.objects.all()
+    serializer_class = QuoteSerializer
     lookup_field = 'pk'
