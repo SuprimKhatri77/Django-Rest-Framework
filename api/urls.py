@@ -26,4 +26,8 @@ urlpatterns = [
     path('quotes/<int:pk>/', views.QuoteDetailView.as_view()),
 
 
+    path('images/', views.ImagesView.as_view()),
+    path('images/<int:pk>/', views.ImageDetailView.as_view()),
+
+
 ]

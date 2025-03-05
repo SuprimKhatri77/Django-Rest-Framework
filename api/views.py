@@ -17,6 +17,8 @@ from employees.filters import EmployeeFilter
 from rest_framework.filters import SearchFilter
 from quotes.serializers import QuoteSerializer
 from quotes.models import *
+from images.models import Image
+from images.serializers import ImageSerializer
 
 
 
@@ -223,4 +225,16 @@ class QuotesView(generics.ListCreateAPIView):
 class QuoteDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Quote.objects.all()
     serializer_class = QuoteSerializer
+    lookup_field = 'pk'
+
+
+
+# images
+class ImagesView(generics.ListCreateAPIView):
+    queryset = Image.objects.all()
+    serializer_class = ImageSerializer
+
+class ImageDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Image.objects.all()
+    serializer_class = ImageSerializer
     lookup_field = 'pk'
