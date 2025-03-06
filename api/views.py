@@ -19,6 +19,8 @@ from quotes.serializers import QuoteSerializer
 from quotes.models import *
 from images.models import Image
 from images.serializers import ImageSerializer
+from taskManager.models import TaskManager
+from taskManager.serializers import TaskSerializer
 
 
 
@@ -238,3 +240,10 @@ class ImageDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Image.objects.all()
     serializer_class = ImageSerializer
     lookup_field = 'pk'
+
+
+
+# taskManager
+class TaskViewSet(viewsets.ModelViewSet):
+    queryset = TaskManager.objects.all()
+    serializer_class = TaskSerializer

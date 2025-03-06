@@ -4,6 +4,7 @@ from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register('employees', views.EmployeeViewSet, basename='employee')
+router.register('tasks', views.TaskViewSet, basename='tasks')
 
 
 urlpatterns = [

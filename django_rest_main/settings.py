@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'quotes',
     'images',
+    'taskManager',
 ]
 
 MIDDLEWARE = [
